@@ -20,8 +20,6 @@ SOURCES    = ../../ext/glvu/glvu.cpp \
 						 ../../src/util/BLOCK_DIAGONAL_MATRIX3.cpp \
 						 ../../src/Timestepper/Strand/TIMESTEPPER.cpp \
 						 ../../src/Geometry/LINE_INTERSECT.cpp \
-						 ../../src/Geometry/CAPSULE.cpp \
-						 ../../src/Geometry/CYLINDER.cpp \
 						 ../../src/Geometry/CUBE.cpp \
 						 ../../src/Geometry/SPHERE.cpp \
 						 ../../src/Geometry/AABB_TREE.cpp \
@@ -32,6 +30,7 @@ SOURCES    = ../../ext/glvu/glvu.cpp \
 						 ../../src/Hyperelastic/Strand/QUADRATIC_STRETCHING.cpp \
 						 ../../src/Hyperelastic/Strand/QUADRATIC_F_BENDING.cpp \
 						 ../../src/Hyperelastic/Strand/TAN_BENDING.cpp \
+						 ../../src/Hyperelastic/Strand/SIN_BENDING.cpp \
 						 ../../src/Geometry/STRAND_MESH.cpp \
 						 ../../src/Geometry/STRAND_MESH_FASTER.cpp \
 						 ../../src/Geometry/STRAND_NET_MESH.cpp

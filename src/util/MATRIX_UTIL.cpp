@@ -867,4 +867,4 @@ MATRIX3 rotationMatrix(const VECTOR3& axis, const REAL& angle)
   return Eigen::AngleAxisd(angle, axis).toRotationMatrix();
 }
 
-} // HOBAK
+} // ANGLE

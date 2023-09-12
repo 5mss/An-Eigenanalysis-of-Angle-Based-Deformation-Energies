@@ -91,4 +91,4 @@ void SPHERE::getClosestPoint(const VECTOR3& query,
   normalLocal = closestPointLocal;
 }
 
-} // HOBAK
+} // ANGLE

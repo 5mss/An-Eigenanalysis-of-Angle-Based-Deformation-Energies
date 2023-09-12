@@ -336,4 +336,4 @@ void TRIANGLE_MESH_FASTER::computeVertexFaceCollisions()
 #endif 
 }
 
-} // HOBAK
+} // ANGLE

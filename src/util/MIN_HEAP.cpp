@@ -156,4 +156,4 @@ void MIN_HEAP::print()
     cout << __FILE__ << " " << __LINE__ << " element " << x << " : " << _heap[x].distance << endl;
 }
 
-} // HOBAK
+} // ANGLE

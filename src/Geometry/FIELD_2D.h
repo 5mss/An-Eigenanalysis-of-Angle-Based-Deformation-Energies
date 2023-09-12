@@ -20,7 +20,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "SETTINGS.h"
 
 // macro to debug 2D fields, assumes that fieldViewer has been built
-// (not actually part of HOBAK yet)
+// (not actually part of ANGLE yet)
 #ifndef VARNAME
 #define VARNAME(x) #x
 #endif
@@ -74,7 +74,7 @@ public:
   void write(std::string filename) const;
   void read(std::string filename);
 
-  // to minimize the number of dependencies in HOBAK (even FFTW!),
+  // to minimize the number of dependencies in ANGLE (even FFTW!),
   // commenting this out for now
   //void FFT(FIELD_2D& real, FIELD_2D& im);
   //void shiftFFT();
@@ -157,6 +157,6 @@ FIELD_2D operator+(const REAL alpha, const FIELD_2D& A);
 FIELD_2D operator-(const FIELD_2D& A, const FIELD_2D& B);
 FIELD_2D operator+(const FIELD_2D& A, const FIELD_2D& B);
 
-} // HOBAK
+} // ANGLE
 
 #endif

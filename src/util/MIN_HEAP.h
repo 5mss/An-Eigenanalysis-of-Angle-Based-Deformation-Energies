@@ -89,6 +89,6 @@ private:
   void swap(int index1, int index2);
 };
 
-} // HOBAK
+} // ANGLE
 
 #endif

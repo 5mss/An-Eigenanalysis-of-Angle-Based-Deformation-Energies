@@ -16,7 +16,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <random>
 
 ///////////////////////////////////////////////////////////////////////
-// A bunch fo drawing routines for HOBAK objects, all in one place
+// A bunch fo drawing routines for ANGLE objects, all in one place
 //
 // This is the only file with a GL dependency, so to remove it,
 // just don't make any of the draw calls listed here.
@@ -464,118 +464,7 @@ void drawStrandMeshOld(const STRAND_MESH& mesh, const int highlight, const bool 
   glEnd();
 }
 
-/*
-///////////////////////////////////////////////////////////////////////
-// draw the twisting forces on a strand mesh
-///////////////////////////////////////////////////////////////////////
-void drawStrandTwistForces(const STRAND_MESH& mesh)
-{
-  const vector<VECTOR3>& vertices = mesh.vertices();
-  const vector<VECTOR2I>& edges = mesh.edges();
-  const VECTOR twistForces = mesh.computeTwistingForces();
 
-  glColor4f(0,1.0,0,1.0);
-  glDisable(GL_DEPTH_TEST);
-  for (unsigned int x = 0; x < vertices.size(); x++)
-  {
-    const VECTOR3 vertex = vertices[x];
-
-    VECTOR3 force;
-    for (unsigned int y = 0; y < 3; y++)
-      force[y] = twistForces[3 * x + y];
-
-    const VECTOR3 forceLine = vertex + force;
-
-    glBegin(GL_LINES);
-      glVertex3f(vertex[0], vertex[1], vertex[2]);
-      glVertex3f(forceLine[0], forceLine[1], forceLine[2]);
-    glEnd();
-  }
-  glEnable(GL_DEPTH_TEST);
-}
-*/
-
-///////////////////////////////////////////////////////////////////////
-// draw a capsule
-///////////////////////////////////////////////////////////////////////
-void drawCapsule(const CAPSULE& capsule)
-{
-  const VECTOR3& t = capsule.translation();
-  const Eigen::AngleAxis<GLfloat> R{ capsule.rotation().cast<GLfloat>() };
-
-  const REAL radius = capsule.radius();
-  const REAL height = capsule.height();
-
-  GLUquadricObj* quadric;
-  quadric = gluNewQuadric();
-
-  glPushMatrix();
-    // apply the transform
-    glTranslatef(t[0], t[1], t[2]);
-    glRotatef((180.0/M_PI) * R.angle(), R.axis().x(), R.axis().y(), R.axis().z());
-
-    // draw it along y axis instead of z axis
-    glRotatef(90.0, 1.0, 0.0, 0.0);
-    glTranslatef(0,0,-0.5 * height);
-
-    // draw the end caps
-    glPushMatrix();
-      glTranslatef(0.0, 0.0, height);
-      //gluDisk(quadric, 0.0, radius, 20, 2);
-      glutSolidSphere(radius, 20, 20);
-    glPopMatrix();
-    glPushMatrix();
-      //glRotatef(180.0, 0,1.0,0);
-      //gluDisk(quadric, 0.0, radius, 20, 2);
-      glutSolidSphere(radius, 20, 20);
-    glPopMatrix();
-
-    // draw the cylinder wall
-    gluCylinder(quadric, radius, radius, height, 20, 20);
-  glPopMatrix();
-
-  gluDeleteQuadric(quadric);
-}
-
-///////////////////////////////////////////////////////////////////////
-// draw a cylinder
-///////////////////////////////////////////////////////////////////////
-void drawCylinder(const CYLINDER& cylinder)
-{
-  const VECTOR3& t = cylinder.translation();
-  const Eigen::AngleAxis<GLfloat> R{ cylinder.rotation().cast<GLfloat>() };
-
-  const REAL radius = cylinder.radius();
-  const REAL height = cylinder.height();
-
-  GLUquadricObj* quadric;
-  quadric = gluNewQuadric();
-
-  glPushMatrix();
-    // apply the transform
-    glTranslatef(t[0], t[1], t[2]);
-    glRotatef((180.0/M_PI) * R.angle(), R.axis().x(), R.axis().y(), R.axis().z());
-
-    // draw it along y axis instead of z axis
-    glRotatef(90.0, 1.0, 0.0, 0.0);
-    glTranslatef(0,0,-0.5 * height);
-
-    // draw the end caps
-    glPushMatrix();
-      glTranslatef(0.0, 0.0, height);
-      gluDisk(quadric, 0.0, radius, 20, 2);
-    glPopMatrix();
-    glPushMatrix();
-      glRotatef(180.0, 0,1.0,0);
-      gluDisk(quadric, 0.0, radius, 20, 2);
-    glPopMatrix();
-
-    // draw the cylinder wall
-    gluCylinder(quadric, radius, radius, height, 20, 20);
-  glPopMatrix();
-
-  gluDeleteQuadric(quadric);
-}
 
 ///////////////////////////////////////////////////////////////////////
 // draw a sphere
@@ -838,18 +727,6 @@ void drawKinematicShape(const KINEMATIC_SHAPE& shape)
     return;
   }
 
-  if (name.compare(string("CYLINDER")) == 0)
-  {
-    drawCylinder((const CYLINDER&)shape);
-    return;
-  }
- 
-  if (name.compare(string("CAPSULE")) == 0)
-  {
-    drawCapsule((const CAPSULE&)shape);
-    return;
-  }
-
   if (name.compare(string("SPHERE")) == 0)
   {
     drawSphere((const SPHERE&)shape);
@@ -967,4 +844,4 @@ void drawCollisionsOld(const STRAND_MESH& mesh)
 }
 
 
-} // HOBAK
+} // ANGLE

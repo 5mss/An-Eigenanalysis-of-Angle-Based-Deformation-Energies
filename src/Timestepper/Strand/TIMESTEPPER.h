@@ -286,7 +286,7 @@ protected:
   bool _disablePreconditioner;
 };
 
-} // HOBAK
+} // ANGLE
 } // TIMESTEPPER
 
 #endif

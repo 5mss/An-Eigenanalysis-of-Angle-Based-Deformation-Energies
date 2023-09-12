@@ -16,8 +16,6 @@ SOURCES    = ../../ext/glvu/glvu.cpp \
 						 ../../src/util/BLOCK_SPARSE_MATRIX3.cpp \
 						 ../../src/Timestepper/Shell/TIMESTEPPER.cpp \
 						 ../../src/Geometry/LINE_INTERSECT.cpp \
-						 ../../src/Geometry/CAPSULE.cpp \
-						 ../../src/Geometry/CYLINDER.cpp \
 						 ../../src/Geometry/CUBE.cpp \
 						 ../../src/Geometry/SPHERE.cpp \
 						 ../../src/Geometry/AABB_TREE.cpp \

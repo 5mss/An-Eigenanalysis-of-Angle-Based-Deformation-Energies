@@ -966,5 +966,5 @@ void TIMESTEPPER::computeCollisionResponse(VECTOR& R, SPARSE_MATRIX& K, SPARSE_M
 }
 
 
-} // HOBAK
+} // ANGLE
 } // SHELL

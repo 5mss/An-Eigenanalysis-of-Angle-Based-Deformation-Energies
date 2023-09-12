@@ -73,7 +73,7 @@ void glutIdle()
   {
     cout << " Hit pause frame specific in scene file " << endl;
     TIMER::printTimings();
-    // movie.streamWriteMovie(scene->movieName().c_str());
+    movie.streamWriteMovie(scene->movieName().c_str());
     //writeSceneJSON(scene->jsonName().c_str());
     cout << " Wrote out movie: " << scene->movieName().c_str() << endl;
     animate = false;
@@ -95,7 +95,7 @@ void glutKeyboard(unsigned char key, int x, int y)
     break;
   case 'q':
     TIMER::printTimings();
-    // movie.streamWriteMovie(scene->movieName().c_str());
+    movie.streamWriteMovie(scene->movieName().c_str());
     //writeSceneJSON(scene->jsonName().c_str());
     cout << " Wrote out movie: " << scene->movieName().c_str() << endl;
     exit(0);

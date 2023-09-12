@@ -226,7 +226,7 @@ protected:
   VECTOR _velocityOld;
 };
 
-} // HOBAK
+} // ANGLE
 } // TIMESTEPPER
 
 #endif

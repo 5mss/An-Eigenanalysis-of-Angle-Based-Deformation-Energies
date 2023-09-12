@@ -208,4 +208,4 @@ MATRIX12 VERTEX_FACE_COLLISION::clampedHessian(const vector<VECTOR3>& v) const
 }
 
 } // VOLUME
-} // HOBAK
+} // ANGLE

@@ -13,7 +13,7 @@ You should have received a copy of the GNU General Public License along with HOB
 If not, see <https://www.gnu.org/licenses/>.
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// This is a file in the HOBAK library
+// This is a file in the ANGLE library
 //
 // May 26, 2022 Theodore Kim, kim@cs.yale.edu
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -199,4 +199,4 @@ MATRIX6 ARAP::clampedHessian(const MATRIX3x2& F) const
 }
 
 } // SHELL
-} // HOBAK
+} // ANGLE

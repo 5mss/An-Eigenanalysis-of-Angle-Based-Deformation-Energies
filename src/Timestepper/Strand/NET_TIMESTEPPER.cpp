@@ -1320,5 +1320,5 @@ SPARSE_MATRIX& NET_TIMESTEPPER::filteredSystem()
 #endif
 }
 
-} // HOBAK
+} // ANGLE
 } // STRAND

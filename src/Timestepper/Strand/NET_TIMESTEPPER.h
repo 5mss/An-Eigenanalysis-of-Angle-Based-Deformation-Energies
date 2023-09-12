@@ -65,7 +65,7 @@ protected:
   SPARSE_MATRIX _missing, _blockDiag;
 };
 
-} // HOBAK
+} // ANGLE
 } // NET_TIMESTEPPER
 
 #endif

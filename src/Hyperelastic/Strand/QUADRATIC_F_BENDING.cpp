@@ -401,4 +401,4 @@ MATRIX6 QUADRATIC_F_BENDING::clampedHessian(const MATRIX3x2& E, const REAL& thet
 
 
 } // STRAND 
-} // HOBAK
+} // ANGLE

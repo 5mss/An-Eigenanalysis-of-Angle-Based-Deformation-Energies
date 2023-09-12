@@ -13,7 +13,7 @@ You should have received a copy of the GNU General Public License along with HOB
 If not, see <https://www.gnu.org/licenses/>.
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// This is a file in the HOBAK library
+// This is a file in the ANGLE library
 //
 // May 26, 2021 Theodore Kim, kim@cs.yale.edu
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,4 +120,4 @@ REAL HYPERELASTIC::computeLambda(const REAL E, const REAL nu)
 }
 
 } // VOLUME
-} // HOBAK
+} // ANGLE

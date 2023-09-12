@@ -513,4 +513,4 @@ bool EDGE_COLLISION::nearlyParallelEdges(const vector<VECTOR3>& e)
 }
 
 } // VOLUME
-} // HOBAK
+} // ANGLE

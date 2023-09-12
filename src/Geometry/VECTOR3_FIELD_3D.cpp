@@ -3958,4 +3958,4 @@ void VECTOR3_FIELD_3D::fixNanInfs()
             (*this)(x,y,z)[i] = 0;
 }
 
-} // HOBAK
+} // ANGLE

@@ -6554,5 +6554,5 @@ void FIELD_3D::setInterval(const int xMin, const int xMax, const int yMin, const
         (*this)(x,y,z) = value;
 }
 
-} // HOBAK
+} // ANGLE
 

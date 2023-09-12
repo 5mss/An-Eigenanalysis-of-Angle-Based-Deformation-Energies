@@ -188,4 +188,4 @@ void CUBE::getClosestPoint(const VECTOR3& query, VECTOR3& closestPoint, VECTOR3&
   }
 }
 
-} // HOBAK
+} // ANGLE

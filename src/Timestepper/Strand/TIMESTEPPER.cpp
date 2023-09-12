@@ -2096,5 +2096,5 @@ bool TIMESTEPPER::isKinematicallyConstrained(const int vertexID)
   return false;
 }
 
-} // HOBAK
+} // ANGLE
 } // STRAND

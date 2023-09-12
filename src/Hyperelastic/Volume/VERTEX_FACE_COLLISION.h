@@ -94,6 +94,6 @@ protected:
 };
 
 } // VOLUME
-} // HOBAK
+} // ANGLE
 
 #endif

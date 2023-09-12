@@ -276,6 +276,6 @@ VECTOR3_FIELD_3D operator+(const VECTOR3_FIELD_3D& u, const VECTOR3_FIELD_3D& v)
 // diff two vector fields
 VECTOR3_FIELD_3D operator-(const VECTOR3_FIELD_3D& u, const VECTOR3_FIELD_3D& v);
 
-} // HOBAK
+} // ANGLE
 
 #endif

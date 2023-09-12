@@ -184,7 +184,7 @@ void FIELD_2D::writeMatlab(string filename, string variableName) const
   fclose(file);
 }
 
-// to minimize the number of dependencies in HOBAK (even FFTW!),
+// to minimize the number of dependencies in ANGLE (even FFTW!),
 // commenting this out for now
 #if 0
 ///////////////////////////////////////////////////////////////////////
@@ -917,4 +917,4 @@ VECTOR3 FIELD_2D::minIndex()
   return minFoundIndex;
 }
 
-} // HOBAK
+} // ANGLE

@@ -34,8 +34,8 @@ public:
     // this will determine the MOV and JSON filenames
     // _sceneName = "net_moving_corners";
     _n0 = 41; _n1 = 41; _subSegment = 2;
-    // string method = "ours";
-    string method = "tan";
+    string method = "ours";
+    // string method = "tan";
     // string method = "brute";
     // string method = "GN";
     // string method = "unFIl";
@@ -52,7 +52,7 @@ public:
 
     _gravity = VECTOR3(0,-1.0,0);
 
-    const REAL E = 1e12;
+    const REAL E = 1e8;
     //const REAL E = 1e6;
     //const REAL E = 1e5; // things seem to misbehave here
     const REAL nu = 0.36;

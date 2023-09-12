@@ -15,8 +15,6 @@ If not, see <https://www.gnu.org/licenses/>.
 #ifndef DRAW_GL_H
 #define DRAW_GL_H
 
-#include "Geometry/CAPSULE.h"
-#include "Geometry/CYLINDER.h"
 #include "Geometry/CUBE.h"
 #include "Geometry/SPHERE.h"
 #include "Geometry/AABB_TREE.h"
@@ -61,8 +59,6 @@ void drawCollisionsOld(const STRAND_MESH& mesh);
 
 // draw kinematic objects
 void drawKinematicShape(const KINEMATIC_SHAPE& shape);
-void drawCapsule(const CAPSULE& capsule);
-void drawCylinder(const CYLINDER& cylinder);
 void drawSphere(const SPHERE& sphere);
 void drawCube(const CUBE& cube);
 
@@ -78,6 +74,6 @@ void drawAABBTree(const AABB_TREE& tree, const int drawDepth);
 void drawAxes();
 
 
-} // HOBAK
+} // ANGLE
 
 #endif

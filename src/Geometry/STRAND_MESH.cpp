@@ -1,27 +1,25 @@
 /*
-This file is part of HOBAK.
+This file is part of ANGLE.
 
-HOBAK is free software: you can redistribute it and/or modify it under the terms of
+ANGLE is free software: you can redistribute it and/or modify it under the terms of
 the GNU General Public License as published by the Free Software Foundation, either
 version 3 of the License, or (at your option) any later version.
 
-HOBAK is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ANGLE is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
 PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with HOBAK.
+You should have received a copy of the GNU General Public License along with ANGLE.
 If not, see <https://www.gnu.org/licenses/>.
 */
 #include "STRAND_MESH.h"
 #include "Hyperelastic/Strand/ISOTROPIC_BENDING.h"
+#include "Hyperelastic/Strand/SIN_BENDING.h"
 #include "util/MATRIX_UTIL.h"
 #include "util/TIMER.h"
 #include <iostream>
 #include "LINE_INTERSECT.h"
 #include <float.h>
-
-#define USING_TAN_BENDING 1
-#define USING_SIN_BENDING 0
 
 #define USING_TAN_TWISTING 1
 #define USING_DWA_TWISTING 0
@@ -1085,11 +1083,7 @@ VECTOR STRAND_MESH::computeSinBendingForces()
     E.col(0) = _edges[e0];
     E.col(1) = _edges[e1];
 
-#if USING_SIN_BENDING
     const STRAND::SIN_BENDING bending;
-#else
-    const STRAND::HALF_BENDING bending;
-#endif
     const VECTOR11 force = bending.gradient(E, B, M0, M1, M, kappa, kappaBar);
     perBendForces[x] = (-1.0 / len) * force;
 
@@ -1331,11 +1325,7 @@ SPARSE_MATRIX STRAND_MESH::computeSinBendingHessian()
     E.col(0) = _edges[e0];
     E.col(1) = _edges[e1];
 
-#if USING_SIN_BENDING
     const STRAND::SIN_BENDING bending;
-#else
-    const STRAND::HALF_BENDING bending;
-#endif
     const MATRIX11 H = bending.hessian(E, B, M0, M1, M, kappa, kappaBar);
 
     perBendHessians[x] = -(1.0 / len) * H;
@@ -1379,11 +1369,7 @@ SPARSE_MATRIX STRAND_MESH::computeSinBendingClampedHessian()
     E.col(0) = _edges[e0];
     E.col(1) = _edges[e1];
 
-#if USING_SIN_BENDING
     const STRAND::SIN_BENDING bending;
-#else
-    const STRAND::HALF_BENDING bending;
-#endif
     const MATRIX11 H = bending.hessian(E, B, M0, M1, M, kappa, kappaBar);
     const MATRIX11 Hclamped = clampEigenvalues(H);
 
@@ -1725,7 +1711,7 @@ MATRIX11 STRAND_MESH::computeSinHessianTwist(const int bendIndex) const
 }
 #else
 {
-  STRAND::HALF_BENDING bending;
+  STRAND::SIN_BENDING bending;
 
   MATRIX11 DDtwist;
   DDtwist.setZero();
@@ -2114,7 +2100,7 @@ void STRAND_MESH::computeSinBinormals()
     
     //const STRAND::SIN_BENDING bending;
     //_kbs[i] = e0.cross(e1) / (e0.norm() * e1.norm());
-    const STRAND::HALF_BENDING bending;
+    const STRAND::SIN_BENDING bending;
     _kbs[i] = bending.binormal(e0,e1);
   }
 }

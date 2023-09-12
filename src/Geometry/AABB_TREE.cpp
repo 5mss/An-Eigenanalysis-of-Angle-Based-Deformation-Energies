@@ -633,4 +633,4 @@ void AABB_TREE::nearbyTriangles(const VECTOR3& mins, const VECTOR3& maxs,
   nearbyTriangles(_root, mins, maxs, eps, faces);
 }
 
-} // HOBAK
+} // ANGLE

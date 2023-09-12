@@ -28,7 +28,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #endif
 
 // macro to debug 3D fields, only the first one has been ported
-// into HOBAK so far
+// into ANGLE so far
 #ifndef FIELDVIEW3D
 #define FIELDVIEW3D(x) FIELD_3D::fieldViewer(x, VARNAME(x)); sleep(1);
 #endif
@@ -497,6 +497,6 @@ FIELD_3D operator-(const FIELD_3D& A, const FIELD_3D& B);
 FIELD_3D operator+(const FIELD_3D& A, const FIELD_3D& B);
 FIELD_3D operator*(const FIELD_3D& A, const FIELD_3D& B);
 
-} // HOBAK
+} // ANGLE
 
 #endif

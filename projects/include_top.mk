@@ -1,6 +1,0 @@
-# was XQuartz installed? https://www.xquartz.org
-GLUT_PATH = -I/opt/X11/include/
-INCLUDES_COMMON = -I./ -I../ -I../../ -I../../ext/eigen-3.3.7 -I../../src/ -I../../src/util -I../../ext/spectra-0.8.1/include -I../../ext/rapidjson -I../../ext/glvu/ -I../../ext/rapidjson/ -I/opt/X11/include/ ${GLUT_PATH}
-LDFLAGS_COMMON = -framework GLUT -framework OpenGL -lstdc++ -fopenmp
-CFLAGS_COMMON = -c -Wall -O3 -std=c++17 -fopenmp -DGL_SILENCE_DEPRECATION -DUSING_HOMEBREW_GCC
-CC = g++-12

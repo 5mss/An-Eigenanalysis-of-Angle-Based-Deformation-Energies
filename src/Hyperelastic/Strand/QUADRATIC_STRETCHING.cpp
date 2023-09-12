@@ -13,7 +13,7 @@ You should have received a copy of the GNU General Public License along with HOB
 If not, see <https://www.gnu.org/licenses/>.
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// This is a file in the HOBAK library
+// This is a file in the ANGLE library
 //
 // July 11, 2022 Theodore Kim, kim@cs.yale.edu
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -165,4 +165,4 @@ MATRIX3 QUADRATIC_STRETCHING::clampedHessian(const VECTOR3& f) const
 }
 
 } // STRAND 
-} // HOBAK
+} // ANGLE

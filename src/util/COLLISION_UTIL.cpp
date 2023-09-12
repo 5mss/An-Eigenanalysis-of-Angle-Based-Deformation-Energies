@@ -611,4 +611,4 @@ bool faceEdgeIntersection(const std::vector<VECTOR3>& triangleVertices,
 }
 
 
-} // HOBAK
+} // ANGLE
